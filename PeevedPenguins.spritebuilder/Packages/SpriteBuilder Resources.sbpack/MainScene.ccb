@@ -225,6 +225,14 @@
 					</dict>
 					<dict>
 						<key>name</key>
+						<string>continuous</string>
+						<key>type</key>
+						<string>Check</string>
+						<key>value</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>name</key>
 						<string>preferredSize</string>
 						<key>type</key>
 						<string>Size</string>
