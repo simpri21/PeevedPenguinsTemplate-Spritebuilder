@@ -22,6 +22,7 @@
     self.userInteractionEnabled = TRUE;
     CCScene *level = [CCBReader loadAsScene:@"levels/level1"];
     [_levelNode addChild:level];
+    _physicsNode.debugDraw = TRUE;
 }
 
 //called on every touch in this screne
@@ -51,7 +52,6 @@
 }
 
 -(void)reset {
-    CCLOG(@"hi");
     //reload current level
     [[CCDirector sharedDirector] replaceScene:[CCBReader loadAsScene:@"Gameplay"]];
 }
