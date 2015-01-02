@@ -8,6 +8,7 @@
 
 #import "Gameplay.h"
 #import "UITouch+CC.h"
+#import "Seal.h"
 
 @implementation Gameplay {
     CCPhysicsNode *_physicsNode;
