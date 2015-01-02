@@ -49,4 +49,8 @@
     [self runAction:follow];
 }
 
+-(void)rerty {
+    //reload current level
+    [[CCDirector sharedDirector] replace scene:[CCBReader loadAsScene:@"Gameplay"]]
+}
 @end
