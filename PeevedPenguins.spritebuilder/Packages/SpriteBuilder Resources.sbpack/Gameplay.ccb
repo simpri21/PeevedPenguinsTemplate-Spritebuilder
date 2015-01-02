@@ -456,8 +456,6 @@
 								<array/>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>
@@ -1741,6 +1739,68 @@
 					</dict>
 					<dict>
 						<key>UUID</key>
+						<integer>18</integer>
+						<key>baseClass</key>
+						<string>CCBFile</string>
+						<key>children</key>
+						<array/>
+						<key>customClass</key>
+						<string></string>
+						<key>displayName</key>
+						<string>WaitingPenguin1</string>
+						<key>memberVarAssignmentName</key>
+						<string></string>
+						<key>memberVarAssignmentType</key>
+						<integer>1</integer>
+						<key>properties</key>
+						<array>
+							<dict>
+								<key>name</key>
+								<string>name</string>
+								<key>type</key>
+								<string>StringSimple</string>
+								<key>value</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>position</string>
+								<key>type</key>
+								<string>Position</string>
+								<key>value</key>
+								<array>
+									<real>51.305576324462891</real>
+									<real>58.780502319335938</real>
+									<integer>0</integer>
+									<integer>0</integer>
+									<integer>0</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>scale</string>
+								<key>type</key>
+								<string>ScaleLock</string>
+								<key>value</key>
+								<array>
+									<real>1</real>
+									<real>1</real>
+									<false/>
+									<integer>0</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>ccbFile</string>
+								<key>type</key>
+								<string>CCBFile</string>
+								<key>value</key>
+								<string>WaitingPenguin.ccb</string>
+							</dict>
+						</array>
+					</dict>
+					<dict>
+						<key>UUID</key>
 						<integer>16</integer>
 						<key>baseClass</key>
 						<string>CCBFile</string>
@@ -2261,68 +2321,6 @@
 					</dict>
 				</array>
 			</dict>
-			<dict>
-				<key>UUID</key>
-				<integer>18</integer>
-				<key>baseClass</key>
-				<string>CCBFile</string>
-				<key>children</key>
-				<array/>
-				<key>customClass</key>
-				<string></string>
-				<key>displayName</key>
-				<string>CCBFile</string>
-				<key>memberVarAssignmentName</key>
-				<string></string>
-				<key>memberVarAssignmentType</key>
-				<integer>1</integer>
-				<key>properties</key>
-				<array>
-					<dict>
-						<key>name</key>
-						<string>name</string>
-						<key>type</key>
-						<string>StringSimple</string>
-						<key>value</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>position</string>
-						<key>type</key>
-						<string>Position</string>
-						<key>value</key>
-						<array>
-							<real>51.305576324462891</real>
-							<real>58.780502319335938</real>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>scale</string>
-						<key>type</key>
-						<string>ScaleLock</string>
-						<key>value</key>
-						<array>
-							<real>1</real>
-							<real>1</real>
-							<false/>
-							<integer>0</integer>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>ccbFile</string>
-						<key>type</key>
-						<string>CCBFile</string>
-						<key>value</key>
-						<string>WaitingPenguin.ccb</string>
-					</dict>
-				</array>
-			</dict>
 		</array>
 		<key>customClass</key>
 		<string>Gameplay</string>
@@ -2447,9 +2445,9 @@
 			<key>name</key>
 			<string>BlinkAndJump</string>
 			<key>offset</key>
-			<real>0.0</real>
+			<real>1.6484375</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>4</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
