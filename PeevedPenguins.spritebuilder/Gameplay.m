@@ -9,6 +9,9 @@
 #import "Gameplay.h"
 #import "UITouch+CC.h"
 #import "CCPhysics+ObjectiveChipmunk.h"
+#import "Penguin.h"
+
+static const float MIN_SPEED = 5.f;
 
 @implementation Gameplay {
     CCPhysicsNode *_physicsNode;
@@ -18,8 +21,9 @@
     CCNode *_pullBackNode;
     CCNode *_mouseJointNode;
     CCPhysicsJoint *_mouseJoint;
-    CCNode *_currentPenguin;
+    Penguin *_currentPenguin;
     CCPhysicsJoint *_penguinCatapultJoint;
+    CCAction *_followPenguin;
 }
 
 //is called when CCB file has completed loading
@@ -42,7 +46,7 @@
     if (CGRectContainsPoint([_catapultArm boundingBox], touchLocation)) {
         _mouseJointNode.position = touchLocation;
         _mouseJoint = [CCPhysicsJoint connectedSpringJointWithBodyA:_mouseJointNode.physicsBody bodyB:_catapultArm.physicsBody anchorA:ccp(0, 0) anchorB:ccp(34, 138) restLength:1.f stiffness:3000.f damping:150.f];
-        _currentPenguin = [CCBReader load:@"Penguin"];
+        _currentPenguin = (Penguin*)[CCBReader load:@"Penguin"];
         CGPoint penguinPosition = [_catapultArm convertToWorldSpace:ccp(34, 138)];
         _currentPenguin.position = [_physicsNode convertToNodeSpace:penguinPosition];
         [_physicsNode addChild:_currentPenguin];
@@ -63,9 +67,9 @@
         [_penguinCatapultJoint invalidate];
         _penguinCatapultJoint = nil;
         _currentPenguin.physicsBody.allowsRotation = TRUE;
-        CCActionFollow *follow = [CCActionFollow actionWithTarget:_currentPenguin worldBoundary:self.boundingBox];
-        [_contentNode runAction:follow];
-
+        _followPenguin = [CCActionFollow actionWithTarget:_currentPenguin worldBoundary:self.boundingBox];
+        [_contentNode runAction:_followPenguin];
+        _currentPenguin.launched = TRUE;
     }
 }
 
@@ -115,5 +119,35 @@
 -(void)reset {
     //reload current level
     [[CCDirector sharedDirector] replaceScene:[CCBReader loadAsScene:@"Gameplay"]];
+}
+
+-(void)update:(CCTime)delta {
+    if(_currentPenguin.launched) {
+        if(ccpLength(_currentPenguin.physicsBody.velocity) < MIN_SPEED) {
+            [self nextAttempt];
+            return;
+        }
+        
+        int xMin = _currentPenguin.boundingBox.origin.x;
+        
+        if (xMin < self.boundingBox.origin.x) {
+            [self nextAttempt];
+            return;
+        }
+        
+        int xMax = xMin + _currentPenguin.boundingBox.size.width;
+        
+        if (xMax > (self.boundingBox.origin.x + self.boundingBox.size.width)) {
+            [self nextAttempt];
+            return;
+        }
+    }
+}
+
+-(void)nextAttempt {
+    _currentPenguin = nil;
+    [_contentNode stopAction:_followPenguin];
+    CCActionMoveTo *actionMoveTo = [CCActionMoveTo actionWithDuration:1.f position:ccp(0, 0)];
+    [_contentNode runAction:actionMoveTo];
 }
 @end
