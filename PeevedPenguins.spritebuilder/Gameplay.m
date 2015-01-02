@@ -27,7 +27,6 @@
 }
 
 -(void)launchPenguin {
-    CCLOG(@"penguin launched");
     //loads the Penguin.ccb that was set up in spritebuilder
     CCNode *penguin = [CCBReader load:@"Penguin"];
     //position the penguin at the bowl of the catapult
@@ -40,6 +39,7 @@
     CGPoint launchDirection = ccp(1, 0);
     CGPoint force = ccpMult(launchDirection, 8000);
     [penguin.physicsBody applyForce:force];
+    CCLOG(@"penguin launched");
 }
 
 @end
