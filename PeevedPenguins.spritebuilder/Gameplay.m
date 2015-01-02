@@ -8,16 +8,20 @@
 
 #import "Gameplay.h"
 #import "UITouch+CC.h"
+#import "Penguin.h"
 
 @implementation Gameplay {
     CCPhysicsNode *_physicsNode;
     CCNode *_catapultArm;
+    CCNode *_levelNode;
 }
 
 //is called when CCB file has completed loading
 -(void)didLoadFromCCB {
     //tell this scene to accept touches
     self.userInteractionEnabled = TRUE;
+    CCScene *level = [CCBReader loadAsScene:@"levels/level1"];
+    [_levelNode addChild:level];
 }
 
 //called on every touch in this screne
