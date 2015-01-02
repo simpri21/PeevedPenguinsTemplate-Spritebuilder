@@ -16,7 +16,7 @@
     if (self) {
         self.visible = TRUE;
     }
-    return self
+    return self;
 }
 
 @end
