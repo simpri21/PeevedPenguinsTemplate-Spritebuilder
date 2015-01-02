@@ -20,7 +20,7 @@
 }
 
 //called on every touch in this screne
--(void)touchBegan:(UITouch *)touch withEvent:(UITouchEvent *)event {
+-(void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
     [self launchPenguin];
 }
 
