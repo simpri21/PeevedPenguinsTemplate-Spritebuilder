@@ -56,7 +56,7 @@
 					<key>value</key>
 					<array>
 						<real>273.30148315429688</real>
-						<real>101.75899505615234</real>
+						<real>101.75898742675781</real>
 						<integer>0</integer>
 						<integer>0</integer>
 						<integer>0</integer>
@@ -69,6 +69,14 @@
 					<string>NodeReference</string>
 					<key>value</key>
 					<integer>3</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>bodyB</string>
+					<key>type</key>
+					<string>NodeReference</string>
+					<key>value</key>
+					<integer>4</integer>
 				</dict>
 				<dict>
 					<key>name</key>
@@ -320,8 +328,6 @@
 								<array/>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>
@@ -438,8 +444,8 @@
 											<real>0.0</real>
 										</array>
 										<array>
-											<real>0.0</real>
-											<real>61</real>
+											<real>2.2613446712493896</real>
+											<real>44.954326629638672</real>
 										</array>
 										<array>
 											<real>965.62103271484375</real>
@@ -462,8 +468,8 @@
 												<real>41.902828216552734</real>
 											</array>
 											<array>
-												<real>0.0</real>
-												<real>61</real>
+												<real>2.2613446712493896</real>
+												<real>44.954326629638672</real>
 											</array>
 											<array>
 												<real>0.0</real>
