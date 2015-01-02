@@ -51,6 +51,7 @@
 }
 
 -(void)rerty {
+    CCLOG(@"hi");
     //reload current level
     [[CCDirector sharedDirector] replaceScene:[CCBReader loadAsScene:@"Gameplay"]];
 }
