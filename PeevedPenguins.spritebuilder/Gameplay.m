@@ -8,7 +8,6 @@
 
 #import "Gameplay.h"
 #import "UITouch+CC.h"
-#import "Penguin.h"
 
 @implementation Gameplay {
     CCPhysicsNode *_physicsNode;
