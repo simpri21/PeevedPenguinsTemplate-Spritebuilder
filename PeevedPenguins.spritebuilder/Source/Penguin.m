@@ -10,13 +10,4 @@
 
 @implementation Penguin
 
--(id) init {
-    self = [super init];
-    
-    if (self) {
-        self.visible = TRUE;
-    }
-    return self;
-}
-
 @end

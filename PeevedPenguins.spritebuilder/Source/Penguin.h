@@ -10,6 +10,4 @@
 
 @interface Penguin : CCSprite
 
--(id)init;
-
 @end
