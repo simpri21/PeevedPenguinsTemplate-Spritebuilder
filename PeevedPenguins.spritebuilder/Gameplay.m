@@ -15,13 +15,14 @@
 }
 
 //is called when CCB file has completed loading
--(void)didLoadFromCB {
+-(void)didLoadFromCCB {
     //tell this scene to accept touches
     self.userInteractionEnabled = TRUE;
 }
 
 //called on every touch in this screne
 -(void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
+    
     [self launchPenguin];
 }
 
