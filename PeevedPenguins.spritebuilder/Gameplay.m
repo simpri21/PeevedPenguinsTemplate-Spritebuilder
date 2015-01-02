@@ -44,7 +44,7 @@
         _mouseJoint = [CCPhysicsJoint connectedSpringJointWithBodyA:_mouseJointNode.physicsBody bodyB:_catapultArm.physicsBody anchorA:ccp(0, 0) anchorB:ccp(34, 138) restLength:1.f stiffness:3000.f damping:150.f];
         _currentPenguin = [CCBReader load:@"Penguin"];
         CGPoint penguinPosition = [_catapultArm convertToWorldSpace:ccp(34, 138)];
-        _currentPenguin.position = [_physicsNode CGPoint:ccp(34, 138)];
+        _currentPenguin.position = [_physicsNode ccp(34, 138)];
         //convertToNodeSpace:penguinPosition
         [_physicsNode addChild:_currentPenguin];
         _currentPenguin.physicsBody.allowsRotation = FALSE;
