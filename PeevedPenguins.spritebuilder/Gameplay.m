@@ -8,7 +8,7 @@
 
 #import "Gameplay.h"
 #import "UITouch+CC.h"
-#import "Seal.h"
+#import "CCPhysics+ObjectiveChipmunk.h"
 
 @implementation Gameplay {
     CCPhysicsNode *_physicsNode;
@@ -78,7 +78,16 @@
 }
 
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair seal:(CCNode *)nodeA wildcard:(CCNode *)nodeB {
-    CCLOG(@"Something colided with a seal");
+    float energy = [pair totalKineticEnergy];
+    if (energy > 5000) {
+        [[physicsNode space] addPostStepBlock:^{
+            [self sealRemoved:nodeA];
+        } key:nodeA];
+    }
+}
+
+-(void)sealRemoved:(CCNode *)seal {
+    [seal removeFromParent];
 }
 
 -(void)launchPenguin {
