@@ -988,7 +988,7 @@
 						<string>Block</string>
 						<key>value</key>
 						<array>
-							<string>play</string>
+							<string>reset</string>
 							<integer>1</integer>
 						</array>
 					</dict>
@@ -1243,8 +1243,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>

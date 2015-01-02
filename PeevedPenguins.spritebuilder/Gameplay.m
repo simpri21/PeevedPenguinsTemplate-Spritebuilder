@@ -50,7 +50,7 @@
     [_contentNode runAction:follow];
 }
 
--(void)rerty {
+-(void)reset {
     CCLOG(@"hi");
     //reload current level
     [[CCDirector sharedDirector] replaceScene:[CCBReader loadAsScene:@"Gameplay"]];
