@@ -30,6 +30,7 @@
     _physicsNode.debugDraw = TRUE;
     _pullBackNode.physicsBody.collisionMask = @[];
     _mouseJointNode.physicsBody.collisionMask = @[];
+    _physicsNode.collisionDelegate = self;
 }
 
 //called on every touch in this screne
@@ -73,6 +74,10 @@
 
 -(void)touchCancelled:(UITouch *)touch withEvent:(UIEvent *)event {
     [self releaseCatapult];
+}
+
+-(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair seal:(CCNode *)nodeA wildcard:(CCNode *)nodeB {
+    CCLOG(@"Something colided with a seal");
 }
 
 -(void)launchPenguin {
