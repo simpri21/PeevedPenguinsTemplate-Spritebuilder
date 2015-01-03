@@ -36,6 +36,7 @@ static const float MIN_SPEED = 5.f;
     _pullBackNode.physicsBody.collisionMask = @[];
     _mouseJointNode.physicsBody.collisionMask = @[];
     _physicsNode.collisionDelegate = self;
+    [CCBReader load:@"WaitingPenguin"];
 }
 
 //called on every touch in this screne
