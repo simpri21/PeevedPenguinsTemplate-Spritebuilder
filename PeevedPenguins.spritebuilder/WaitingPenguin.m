@@ -12,7 +12,7 @@
 
 -(void)didLoadFromCCB {
     float delay = (arc4random() % 2000) / 1000.f;
-    CCLOG(@"%d", delay);
+    CCLOG(@"%f", delay);
     [self performSelector:@selector(startBlinkAndJump) withObject:nil afterDelay:delay];
 }
 
