@@ -10,6 +10,7 @@
 #import "UITouch+CC.h"
 #import "CCPhysics+ObjectiveChipmunk.h"
 #import "Penguin.h"
+#import "WaitingPenguin.h"
 
 static const float MIN_SPEED = 5.f;
 
@@ -24,6 +25,7 @@ static const float MIN_SPEED = 5.f;
     Penguin *_currentPenguin;
     CCPhysicsJoint *_penguinCatapultJoint;
     CCAction *_followPenguin;
+    WaitingPenguin *_waitingPenguin;
 }
 
 //is called when CCB file has completed loading
@@ -36,7 +38,8 @@ static const float MIN_SPEED = 5.f;
     _pullBackNode.physicsBody.collisionMask = @[];
     _mouseJointNode.physicsBody.collisionMask = @[];
     _physicsNode.collisionDelegate = self;
-    [CCBReader load:@"WaitingPenguin"];
+    _waitingPenguin = (WaitingPenguin*)[CCBReader load:@"WaitingPenguin"];
+    _waitingPenguin.position = ccp(100,100);
 }
 
 //called on every touch in this screne
