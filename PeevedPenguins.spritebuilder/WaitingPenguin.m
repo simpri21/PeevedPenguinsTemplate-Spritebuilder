@@ -11,12 +11,12 @@
 @implementation WaitingPenguin
 
 -(void)didLoadFromCCB {
-//    float delay = (arc4random() % 2000) / 1000.f;
-//    CCLOG(@"%f", delay);
-//    [self performSelector:@selector(startBlinkAndJump) withObject:nil afterDelay:delay];
-//}
+    float delay = (arc4random() % 2000) / 1000.f;
+    CCLOG(@"%f", delay);
+    [self performSelector:@selector(startBlinkAndJump) withObject:nil afterDelay:delay];
+}
 
-//-(void)startBlinkAndJump {
+-(void)startBlinkAndJump {
     //the animation manager of each node is stored in the animation manager property
     CCAnimationManager *animationManager = self.animationManager;
     //timelines can be referenced and run by name
